@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body},'envs')}">
+
+<body>
+
+<h2>Envs</h2>
+
+<table id="envs" class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="env : ${listEnvs}">
+    <td th:text="${env.name}"></td>
+    <td th:text="${env.value}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
